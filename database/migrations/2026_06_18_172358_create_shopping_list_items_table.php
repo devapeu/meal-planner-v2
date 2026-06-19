@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('shopping_list_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('item');
-            $table->integer('position')->index();
+            $table->unsignedInteger('position')->default(0)->index();
             $table->timestamps();
         });
     }
