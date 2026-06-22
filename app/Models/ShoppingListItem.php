@@ -12,6 +12,8 @@ class ShoppingListItem extends Model
     /** @use HasFactory<\Database\Factories\ShoppingListItemFactory> */
     use HasFactory;
 
+    protected $fillable = ['user_id', 'item', 'position'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

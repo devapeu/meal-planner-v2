@@ -20,6 +20,11 @@ class CalendarEntry extends Model
         'end_date',
     ];
 
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
+
     protected $appends = [
         'duration',
     ];
