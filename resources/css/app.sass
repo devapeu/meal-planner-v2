@@ -1,0 +1,78 @@
+@use 'variables' as *
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand:wght@400;700&display=swap')
+
+*
+    box-sizing: border-box
+
+body
+    font-family: 'Poppins', sans-serif
+    background-color: #fffbf8
+    color: $wine
+    margin: 0
+    @media (min-width: 1280px)
+        overflow: hidden
+
+*:focus-visible
+    outline: 1px solid $accent
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-weight: 600
+
+button, input, select, textarea
+    font-family: 'Poppins', sans-serif
+    border-radius: 4px
+    color: $wine
+
+input, select
+    height: 32px
+    background: white
+    border: 1px solid $burgundy
+    padding: 0 12px
+    font-size: 16px
+    &:hover, &:focus, &:focus-visible
+        border: 1px solid $accent
+
+button
+    cursor: pointer
+    border: 1px solid $accent
+    background: $cream
+    color: $accent
+    padding-left: 12px
+    padding-right: 12px
+    min-width: 32px
+    height: 32px
+    font-weight: 500
+    font-size: 14px
+    transition: 100ms linear all
+    @media (pointer: fine)
+        &:hover
+            background: $cream-200
+
+.btn-accent
+    background: $background-300
+    border-color: $background-300
+    color: white
+    @media (pointer: fine)
+        &:hover
+            background: $burgundy
+
+input
+    padding: 4px 8px
+
+textarea
+    padding: 8px 12px
+
+ul
+    margin: 0
+
+.slide-down-enter-active,
+.slide-down-leave-active
+    transition: all 200ms ease-out
+
+.slide-down-enter-from,
+.slide-down-leave-to
+    transform: translateY(-10px)
+    opacity: 0
