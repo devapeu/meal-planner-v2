@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\DB;
 
 class CalendarEntry extends Model
 {
@@ -33,7 +34,7 @@ class CalendarEntry extends Model
     protected function duration(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->start_date->diffInDays($this->end_date) + 1,
+            get: fn() => $this->start_date->diffInDays($this->end_date) + 1,
         );
     }
 
@@ -57,7 +58,10 @@ class CalendarEntry extends Model
         return $query
             ->where('start_date', '<=', $sunday)
             ->where('end_date', '>=', $monday)
-            ->orderByRaw('start_date ASC, (DATEDIFF(end_date, start_date)) DESC')
+            ->orderByRaw('start_date ASC, ' . (DB::getDriverName() === 'mysql'
+                ? 'DATEDIFF(end_date, start_date)'
+                : '(julianday(end_date) - julianday(start_date))'
+            ) . ' DESC')
             ->orderBy('id');
     }
 }
