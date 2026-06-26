@@ -2,25 +2,32 @@
 </script>
 
 <template>
-    <div class="flex min-h-screen">
-        <aside class="w-64 bg-brand-50 border-r border-brand-300 p-4 flex flex-col gap-6">
-            <div class="text-lg font-semibold text-brand-500">Meal Planner</div>
-            <nav class="flex flex-col gap-1">
+    <div class="flex flex-col min-h-screen md:flex-row">
+        <!-- Sidebar (desktop) / Bottom bar (mobile) -->
+        <aside class="
+            fixed bottom-0 left-0 right-0 z-50
+            bg-brand-50 border-t border-brand-300
+            flex flex-row items-center justify-around px-4 py-2
+            md:static md:w-64 md:flex-col md:items-start md:gap-6
+            md:border-t-0 md:border-r md:p-4
+        ">
+            <div class="hidden md:block text-lg font-semibold text-brand-500">Meal Planner</div>
+            <nav class="flex flex-row gap-1 md:flex-col">
                 <a
                     href="/"
-                    class="px-3 py-2 rounded text-sm hover:bg-brand-100">
+                    class="flex flex-col items-center gap-0.5 px-4 py-1 rounded text-xs md:text-sm md:flex-row md:gap-0 md:px-3 md:py-2 hover:bg-brand-100">
                     Home
                 </a>
             </nav>
-            <nav class="flex mt-auto">
+            <nav class="flex md:mt-auto">
                 <a
                     href="/logout"
-                    class="px-3 py-2 rounded text-sm hover:bg-brand-100">
+                    class="flex flex-col items-center gap-0.5 px-4 py-1 rounded text-xs md:text-sm md:flex-row md:gap-0 md:px-3 md:py-2 hover:bg-brand-100">
                     Log Out
                 </a>
             </nav>
         </aside>
-        <main class="flex-1 p-6">
+        <main class="flex-1 p-6 pb-20 md:pb-6">
             <slot />
         </main>
     </div>

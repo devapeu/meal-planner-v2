@@ -4,16 +4,21 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "test": "vitest run",
+        "test:watch": "vitest"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
+        "@vue/test-utils": "^2.4.11",
         "concurrently": "^9.0.1",
+        "jsdom": "^29.1.1",
         "laravel-vite-plugin": "^3.1",
         "sass-embedded": "^1.100.0",
         "tailwindcss": "^4.0.0",
         "typescript": "^6.0.3",
-        "vite": "^8.0.0"
+        "vite": "^8.0.0",
+        "vitest": "^4.1.9"
     },
     "dependencies": {
         "@devapeu/cooklang-parser": "^0.1.4",
@@ -23,6 +28,6 @@
         "naive-ui": "^2.44.1",
         "pinia": "^3.0.4",
         "vue": "^3.5.38",
-        "vuedraggable": "^2.24.3"
+        "vuedraggable": "^4.1.0"
     }
 }

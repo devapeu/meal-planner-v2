@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import {ShoppingListItem} from "@/types";
+import ShoppingList from "@/Components/ShoppingList/ShoppingList.vue";
+
+defineProps<{
+    shoppingList: ShoppingListItem[]
+}>();
+</script>
 <template>
-    <h1 class="text-6xl">Hello world</h1>
+    <ShoppingList :shopping-list="shoppingList" />
 </template>

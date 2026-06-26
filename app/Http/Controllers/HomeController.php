@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CalendarEntry;
 use App\Models\Recipe;
+use App\Models\ShoppingListItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -27,13 +28,14 @@ class HomeController extends Controller
                 'recipe_id'  => $e->recipe_id,
             ]);
 
-        $recipes = Recipe::where('user_id', $request->user()->id)
-            ->get(['id', 'name', 'content']);
+        $shoppingList = ShoppingListItem::where('user_id', $request->user()->id)
+            ->orderBy('position', 'asc')
+            ->get(['id', 'item', 'position']);
 
         return Inertia::render('Home', [
-            'calendar'  => $calendar,
-            'startDate' => $startDate,
-            'recipes'   => $recipes,
+            // 'calendar'  => $calendar,
+            // 'startDate' => $startDate,
+            'shoppingList'   => $shoppingList,
         ]);
     }
 }
