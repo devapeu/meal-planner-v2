@@ -58,7 +58,7 @@ function onReorder() {
             </button>
         </div>
         <ul v-if="adding">
-            <li class="flex items-center gap-2 py-2 px-4 border-b border-b-slate-300">
+            <li class="flex items-center gap-2 py-2 px-4">
                 <input
                     ref="newItemInput"
                     v-model="newItemValue"
@@ -82,6 +82,11 @@ function onReorder() {
                 <ShoppingListItem :item="element" />
             </template>
         </draggable>
+        <div
+            v-if="items.length === 0 && !adding"
+            class="m-5 mt-4 p-5 border border-gray-200 bg-gray-50 rounded text-gray-500 text-center">
+            No items yet
+        </div>
     </div>
 </template>
 
