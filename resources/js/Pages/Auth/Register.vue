@@ -17,8 +17,8 @@ function handleRegister() {
 </script>
 
 <template>
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-white rounded-lg p-8 min-w-md shadow-lg">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg p-8 w-full md:max-w-md shadow-lg">
             <h1 class="text-center text-2xl font-semibold">Register</h1>
             <form
                 class="grid gap-2"
@@ -59,7 +59,7 @@ function handleRegister() {
                     type="submit">
                     {{ form.processing ? 'Loading...' : ' Register' }}
                 </button>
-                <p class="text-sm">Already have an account? <a class="text-brand-400" href="/login">Login</a>.</p>
+                <p class="text-sm mt-1 text-gray-500">Already have an account? <a class="text-brand-400" href="/login">Login</a>.</p>
             </form>
         </div>
     </div>

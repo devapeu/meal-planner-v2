@@ -21,7 +21,7 @@ const id = useId()
 <template>
     <div>
         <label
-            class="block"
+            class="block text-gray-700 text-sm"
             :for="id">{{ label }}</label>
         <input
             :id="id"
