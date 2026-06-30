@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen md:flex-row">
+    <div class="flex flex-col h-svh md:flex-row">
         <!-- Sidebar (desktop) / Bottom bar (mobile) -->
         <aside class="
             fixed bottom-0 left-0 right-0 z-50

@@ -17,7 +17,7 @@ function handleRegister() {
 </script>
 
 <template>
-    <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="flex items-center justify-center min-h-svh p-4">
         <div class="bg-white rounded-lg p-8 w-full md:max-w-md shadow-lg">
             <h1 class="text-center text-2xl font-semibold">Register</h1>
             <form
